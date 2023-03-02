@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
-def home(name=None):
+def home():
     return render_template('index.html')
 
 if __name__ == '__main__':
@@ -19,5 +19,4 @@ if __name__ == '__main__':
     print('Finished training, now running the server')
     app.register_blueprint(accounts)
     app.register_blueprint(tweets)
-
     app.run(host='0.0.0.0', port=8080)
