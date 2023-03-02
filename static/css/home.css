@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    margin: 0;
+}
+
+#twitter-main {
+    display: flex;
+    justify-content: center;
+    background: rgb(0, 0, 0);
+}
+
+#twitter-navbar {
+    width: 225px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#twitter-feed {
+    border-right: rgb(47, 51, 54) 1px solid;
+    border-left: rgb(47, 51, 54) 1px solid;
+    display: grid;
+    grid-template-rows: 150px 50px;
+    width: 598px;
+}
+
+#twitter-tweet-input {
+    display: grid;
+    border-bottom: rgb(47, 51, 54) 1px solid;
+
+    grid-template-rows: 50px 50px;
+}
+
+#twitter-tweet-icons {
+    display: grid;
+    grid-template-columns: repeat(6, 30px) 0.9fr;
+    padding-left: 70px;
+}
+
+.tweet-icon-option {
+    display: flex;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+}
+
+.tweet-icon-option:hover {
+    background: rgba(29, 155, 240, 0.1);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+
+}
+
+.tweet-icon-svg {
+    width: 25px;
+    fill: rgb(29, 155, 240);
+}
+
+.profile-picture {
+    border-radius: 50%;
+}
+
+.tweet-profile-picture {
+    padding-left: 20px;
+}
+
+.tweet-header-style {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+.twitter-name {
+    color: white;
+    padding-left: 10px;
+    font-weight: 500;
+}
+
+.twitter-username,
+.seperator,
+.tweet-date {
+    font-size: 15px;
+    color: rgb(113, 118, 123);
+    padding-left: 5px;
+}
+
+.tweet-date {
+    width: 50px;
+}
+
+.tweet-edit {
+    cursor: pointer;
+}
+
+.tweet-grid {
+    display: grid;
+    grid-template-rows: 20px;
+}
+
+.twitter-author-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.twitter-post-content {
+    display: flex;
+}
+
+#twitter-tweet-container {
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#tweet-page-type {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: white;
+    font-size: 20px;
+    color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#tweet-input {
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+}
+
+#tweet-input::placeholder {
+    color: #71767B;
+}
+
+#tweet-input:focus {
+    outline: none;
+}
+
+#show-more-text {
+    color: rgb(29, 155, 240);
+    text-decoration: none;
+
+}
+
+#show-more-tweets {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border-bottom: rgb(47, 51, 54) 1px solid;
+}
+
+.twitter-post {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: rgb(47, 51, 54) 1px solid;
+}
+
+.content {
+
+    color: white;
+    padding-left: 10px;
+    width: 500px;
+}
+
+.tweet-option-icon {
+
+    width: 1.25em;
+    fill: rgb(113, 118, 123);
+}
+
+.tweet-delete {
+    fill: rgb(244, 33, 46);
+}
+
+.tweet-extras {
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.tweet-options {
+
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 130px);
+}
+
+
+.comments-icon,
+.retweet-icon,
+.heart-icon,
+.share-icon {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(113, 118, 123);
+
+
+}
+
+#twitter-sidebar {
+    /* background-color: blue;
+    border: blue 2px solid; */
+    width: 350px;
+    display: block;
+    padding-top: 10px;
+
+}
+
+#logo {
+    margin: 35px;
+    width: 30px;
+}
+
+#modal-logo {
+    width: 30px;
+}
+
+#twitter-icon {
+    fill: white;
+}
+
+.active {
+    font-weight: 500 !important;
+}
+
+.twitter-nav-item {
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    padding-left: 15px;
+    height: 50px;
+    display: flex;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+
+.twitter-nav-item:hover {
+    background-color: rgb(231, 233, 234, 0.1);
+    border-radius: 9999px;
+}
+
+.nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 20px;
+}
+
+.nav-icon {
+    width: 30px;
+    fill: white;
+}
+
+#tweet-btn {
+    background-color: rgb(29, 155, 240);
+    border-radius: 9999px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#tweet-input-btn {
+    cursor: pointer;
+    background-color: rgb(29, 155, 240);
+    border-radius: 9999px;
+    height: 36px;
+    justify-self: flex-end;
+    width: 100px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#tweet-search {
+    margin-left: 5px;
+    background-color: rgb(32, 35, 39);
+    border-radius: 9999px;
+    height: 44px;
+    width: 250px;
+    border: none;
+    color: white;
+}
+
+#tweet-search::placeholder {
+    padding-left: 10px;
+}
+
+#side-bar {
+    display: grid;
+    grid-template-rows: 60px 50px 70px 70px 70px;
+    background: rgb(22, 24, 28);
+    width: 250px;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 16px;
+}
+
+#bar-title {
+    color: white;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.bar-section {
+    margin: 30px;
+}
+
+.bar-category {
+    color: rgb(113, 118, 123);
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    padding-bottom: 5px;
+}
+
+.bar-trending {
+    color: rgb(113, 118, 123);
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    padding-top: 5px;
+
+}
+
+.bar-header {
+
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+#user-details {
+    bottom: 0;
+    color: white;
+}
+
+#unregistered-footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background-color: #1d9bf0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#footer-text {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+#footer-header {
+    font-weight: 500;
+    font-size: 26px;
+}
+
+#footer-subheader {
+    font-size: 14px;
+}
+
+.footer-button {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: #0f1419;
+    background-color: #d7dbdc;
+    border: none;
+    border-radius: 20px;
+    height: 36px;
+    width: 75px;
+}
+
+.transparent-footer-button {
+    background-color: transparent !important;
+    border: rgba(255, 255, 255, 0.35) 1px solid;
+    color: rgb(255, 255, 255) !important;
+}
+
+
+.modal {
+    padding-top: 30px;
+    justify-content: center;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(91, 112, 131, 0.4);
+}
+
+
+.modal-content {
+    border-radius: 16px;
+    background-color: #000;
+    padding: 20px;
+    border: none;
+    width: 550px;
+    height: 470px;
+}
+
+.close {
+    color: #aaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#form-content {
+    color: #fff;
+    gap: 15px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+
+}
+
+#form-header {
+    margin-right: 55px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+}
+
+#form-oauth2-logins {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.oauth-2-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: #0f1419;
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    height: 42px;
+    width: 300px;
+}
+
+.oauth-2-light-font {
+    font-weight: 500 !important;
+}
+
+.divider {
+    background-color: rgb(51, 54, 57);
+    height: 1px;
+    width: 100%;
+}
+
+#alt-login-section {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    gap: 5px;
+}
+
+.register-input {
+    color: white;
+    border: #333639 1px solid !important;
+    border-radius: 5px;
+    height: 50px;
+    padding-left: 7px;
+    margin-left: 12px;
+    width: 260px;
+    font-size: 16px;
+}
+
+.register-input:focus {
+    border: 2px #1d9bf0 solid !important;
+    outline: none !important;
+    color: rgb(231, 233, 234);
+}
+
+.register-input {
+    background: transparent;
+}
+
+#register-form {
+    gap: 30px;
+    flex-direction: column;
+    display: flex;
+}
+
+#register-buttons {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-button {
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #0f1419;
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    height: 32px;
+    width: 300px;
+}
+
+.transparent-register-button {
+    background-color: transparent !important;
+    border: rgba(255, 255, 255, 0.35) 1px solid;
+    color: rgb(255, 255, 255) !important;
+}
+
+
+#sign-up-notice {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(113, 118, 123);
+    font-size: 15px;
+}
+
+.sign-up-link {
+    color: rgb(29, 155, 240) !important;
+    text-decoration: none;
+    font-size: 14px !important;
+}
+
+#sentiment-toggler {
+    flex-direction: column;
+    margin-top: 40px;
+    margin-left: -70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
