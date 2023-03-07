@@ -1,0 +1,9 @@
+PyJWT
+mysql-connector-python
+python-dotenv
+pandas 
+nltk
+scikit-learn
+bcrypt 
+flask 
+flask_cors
