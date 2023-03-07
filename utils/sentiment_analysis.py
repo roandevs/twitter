@@ -26,6 +26,7 @@ def is_positive_tweet(content):
     return True if sentiment[0] == 'positive' else False
 
 def train():
+    print('Training classifier...')
     global text_classifier, tfidfconverter
     tweets = pd.read_csv("./Tweets.csv")
     X = tweets.iloc[:, 10].values
