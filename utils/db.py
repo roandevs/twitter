@@ -3,12 +3,13 @@ import mysql.connector as mysql
 import os 
 
 load_dotenv()  
+dbHost = os.environ.get("DB_HOST")
 dbUser = os.environ.get("DB_USER")
 dbPass = os.environ.get("DB_PASSWORD")
 dbName = os.environ.get("DB_NAME")
 
 def create_db_conn():
-    conn = mysql.connect( host="localhost", database=dbName, user=dbUser, password=dbPass)
+    conn = mysql.connect(host=dbHost, database=dbName, user=dbUser, password=dbPass)
     cursor = conn.cursor(prepared=True)
     return conn, cursor
 
