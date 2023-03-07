@@ -83,7 +83,7 @@ function register(e) {
     else if (username.length < 1 || username.length > 60) return alert('Your username must be between 1-60 characters') /* checks that are done client-sided and server-sided to prevent invalid values and string lengths being passed into the database */
     else if (password.length < 8) return alert('Your password must be more than 8 characters long') /* user must enter a semi-secure password, could be improved with more checks such as checking if a special character or numbers are in the password */
     const http_req_1 = new XMLHttpRequest()
-    http_req_1.open("POST", `http://127.0.0.1:8080/accounts/register`) /* send post request to API */
+    http_req_1.open("POST", `https://twitter.roanj.com/accounts/register`) /* send post request to API */
     http_req_1.addEventListener("load", (e) => { /* response event */
         let responseData = http_req_1.responseText
         if (responseData.length !== 0) {
@@ -104,7 +104,7 @@ function login(e) {
     else if (username.length < 1 || username.length > 60) return alert('Your username must be between 1-60 characters')
     else if (password.length < 8) return alert('Your password must be more than 8 characters long')
     const http_req_1 = new XMLHttpRequest()
-    http_req_1.open("POST", `http://127.0.0.1:8080/accounts/login`)  /* send post request to API */
+    http_req_1.open("POST", `https://twitter.roanj.com/accounts/login`)  /* send post request to API */
     http_req_1.addEventListener("load", (e) => {  /* response event */
         let responseData = http_req_1.responseText
         if (responseData.length !== 0) {
@@ -133,7 +133,7 @@ tweetBtn.onclick = function (e) {
     if (!tweetContent) return alert('You must enter some content to tweet')
     else if (tweetContent.length > 600) return alert('Your tweet must be under 600 characters') /* database design only allows the tweeted content to be 600 characters or less */
     const http_req_1 = new XMLHttpRequest()
-    http_req_1.open("POST", `http://127.0.0.1:8080/tweets/post`)
+    http_req_1.open("POST", `https://twitter.roanj.com/tweets/post`)
     http_req_1.addEventListener("load", (e) => {
         let responseData = http_req_1.responseText
         if (responseData.length !== 0) {
@@ -152,7 +152,7 @@ function editTweet(tweet_id, tweet_content) {
     else if (!editedTweet) return alert('You must enter some content in your edited tweet')
     else if (editedTweet.length > 600) return alert('Your edited tweet must be under 600 characters')
     const http_req_1 = new XMLHttpRequest()
-    http_req_1.open("POST", `http://127.0.0.1:8080/tweets/update`)
+    http_req_1.open("POST", `https://twitter.roanj.com/tweets/update`)
     http_req_1.addEventListener("load", (e) => {
         let responseData = http_req_1.responseText
         if (responseData.length !== 0) {
@@ -169,7 +169,7 @@ function deleteTweet(tweet_id) {
     const token = window.localStorage.getItem('token')
     if (!token) return alert('You are not logged in, please refresh the page')
     const http_req_1 = new XMLHttpRequest()
-    http_req_1.open("POST", `http://127.0.0.1:8080/tweets/delete`)
+    http_req_1.open("POST", `https://twitter.roanj.com/tweets/delete`)
     http_req_1.addEventListener("load", (e) => {
         let responseData = http_req_1.responseText
         if (responseData.length !== 0) {
@@ -186,7 +186,7 @@ function likeTweet(tweet_id) {
     const token = window.localStorage.getItem('token')
     if (!token) return alert('You are not logged in, please refresh the page')
     const http_req_1 = new XMLHttpRequest()
-    http_req_1.open("POST", `http://127.0.0.1:8080/tweets/like`)
+    http_req_1.open("POST", `https://twitter.roanj.com/tweets/like`)
     http_req_1.addEventListener("load", (e) => {
         let responseData = http_req_1.responseText
         if (responseData.length !== 0) {
@@ -204,7 +204,7 @@ async function checkLogin() {
         const token = window.localStorage.getItem('token')
         if (!token) return resolve(false)/* send value false (not logged) in as user does not have a JWT token saved */
         const http_req_1 = new XMLHttpRequest()
-        http_req_1.open("POST", `http://127.0.0.1:8080/accounts/check-login`)
+        http_req_1.open("POST", `https://twitter.roanj.com/accounts/check-login`)
         http_req_1.addEventListener("load", (e) => {
             let responseData = http_req_1.responseText
             if (responseData.length !== 0) {
@@ -220,7 +220,7 @@ async function checkLogin() {
 function getTweets(search = null) {
     const http_req_1 = new XMLHttpRequest()
     const token = window.localStorage.getItem('token') ? window.localStorage.getItem('token') : ''
-    http_req_1.open("POST", `http://127.0.0.1:8080/tweets/fetch`)
+    http_req_1.open("POST", `https://twitter.roanj.com/tweets/fetch`)
     http_req_1.addEventListener("load", (e) => {
         let responseData = http_req_1.responseText
         if (responseData.length !== 0) {
