@@ -18,12 +18,12 @@ def start_logging():
         app.logger.handlers.extend(gunicorn_error_logger.handlers)
         app.logger.setLevel(logging.DEBUG)
 
-if __name__ == '__main__':
-    start_logging()
-    train()
-    print('Finished training, now running the server')
-    app.register_blueprint(accounts)
-    app.register_blueprint(tweets)
+print('Running logger')
+start_logging()
+print('Starting training process')
+train()
+print('Registering routes')
+app.register_blueprint(accounts)
+app.register_blueprint(tweets)
     
-
 
