@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 import pandas as pd 
 import re, nltk
 
+nltk.download('stopwords')
 text_classifier = RandomForestClassifier(n_estimators=100, random_state=0)
 tfidfconverter = TfidfVectorizer(max_features=2000, min_df=5, max_df=0.7, stop_words=stopwords.words('english'))
 
@@ -26,7 +27,6 @@ def is_positive_tweet(content):
 
 def train():
     global text_classifier, tfidfconverter
-    nltk.download('stopwords')
     tweets = pd.read_csv("./Tweets.csv")
     X = tweets.iloc[:, 10].values
     y = tweets.iloc[:, 1].values
