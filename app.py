@@ -20,11 +20,11 @@ def start_logging():
         app.logger.setLevel(logging.DEBUG)
         
 
-print('Running logger')
+
 start_logging()
-print('Starting training process')
+logging.info('Starting training process')
 train()
-print('Registering routes')
+logging.info('Registering routes')
 app.register_blueprint(accounts)
 app.register_blueprint(tweets)
     
